@@ -9,7 +9,7 @@ if (!uri) {
 let client;
 try {
   client = new MongoClient(uri, {
-    appName: "devrel-github-javascript-nextjs-bookmarks",
+    appName: "devrel-github-javascript-nextjstemplate",
     serverSelectionTimeoutMS: 5000,
   });
   await client.connect();

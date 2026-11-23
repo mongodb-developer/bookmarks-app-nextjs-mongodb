@@ -6,7 +6,7 @@ const uri = process.env.MONGODB_URI;
 
 // Connection metadata so MongoDB can identify this app in monitoring and
 // logs.
-const appName = "devrel-github-javascript-nextjs-bookmarks";
+const appName = "devrel-github-javascript-nextjstemplate";
 
 // Wait up to five seconds to select a MongoDB server.
 // This timeout does not limit the full HTTP request.
