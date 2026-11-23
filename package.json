@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "description": "A bookmark app built with Next.js, TypeScript and MongoDB.",
-  "homepage": "https://github.com/Eronmmer/mongodb-bookmarks-tutorial#readme",
+  "homepage": "https://github.com/mongodb-developer/bookmarks-app-nextjs-mongodb#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Eronmmer/mongodb-bookmarks-tutorial.git"
+    "url": "git+https://github.com/mongodb-developer/bookmarks-app-nextjs-mongodb.git"
   },
   "bugs": {
-    "url": "https://github.com/Eronmmer/mongodb-bookmarks-tutorial/issues"
+    "url": "https://github.com/mongodb-developer/bookmarks-app-nextjs-mongodb/issues"
   },
   "keywords": [
     "bookmarks",

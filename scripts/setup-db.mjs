@@ -9,17 +9,22 @@ if (!uri) {
 let client;
 try {
   client = new MongoClient(uri, {
-    appName: "devrel-tutorial-javascript-nextjstemplate",
+    appName: "devrel-github-javascript-nextjs-bookmarks",
     serverSelectionTimeoutMS: 5000,
   });
   await client.connect();
-  await client.db().collection("bookmarks").createIndex(
-    { createdAt: -1, _id: -1 },
-    { name: "bookmarks_newest_first" },
-  );
+  await client
+    .db()
+    .collection("bookmarks")
+    .createIndex(
+      { createdAt: -1, _id: -1 },
+      { name: "bookmarks_newest_first" }
+    );
   console.log("Bookmark index is ready.");
 } catch {
-  console.error("Could not prepare the bookmark index. Check the connection and database permissions.");
+  console.error(
+    "Could not prepare the bookmark index. Check the connection and database permissions."
+  );
   process.exitCode = 1;
 } finally {
   await client?.close().catch(() => {

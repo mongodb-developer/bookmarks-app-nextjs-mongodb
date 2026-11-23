@@ -6,7 +6,7 @@ const uri = process.env.MONGODB_URI;
 
 // Connection metadata so MongoDB can identify this app in monitoring and
 // logs.
-const appName = "devrel-tutorial-javascript-nextjstemplate";
+const appName = "devrel-github-javascript-nextjs-bookmarks";
 
 // Wait up to five seconds to select a MongoDB server.
 // This timeout does not limit the full HTTP request.
@@ -36,7 +36,7 @@ export function getClient(): Promise<MongoClient> {
   if (!uri) {
     // Generic message only — never echo connection strings or secrets.
     throw new Error(
-      "MongoDB is not configured. Set the MONGODB_URI environment variable.",
+      "MongoDB is not configured. Set the MONGODB_URI environment variable."
     );
   }
 
@@ -44,24 +44,20 @@ export function getClient(): Promise<MongoClient> {
     if (global._mongoClientPromise) {
       return global._mongoClientPromise;
     }
-    clientPromise = new MongoClient(uri, options)
-      .connect()
-      .catch((error) => {
-        global._mongoClientPromise = undefined;
-        clientPromise = null;
-        throw error;
-      });
+    clientPromise = new MongoClient(uri, options).connect().catch((error) => {
+      global._mongoClientPromise = undefined;
+      clientPromise = null;
+      throw error;
+    });
     global._mongoClientPromise = clientPromise;
     return clientPromise;
   }
 
   if (!clientPromise) {
-    clientPromise = new MongoClient(uri, options)
-      .connect()
-      .catch((error) => {
-        clientPromise = null;
-        throw error;
-      });
+    clientPromise = new MongoClient(uri, options).connect().catch((error) => {
+      clientPromise = null;
+      throw error;
+    });
   }
   return clientPromise;
 }
@@ -74,4 +70,3 @@ export async function getDatabase(): Promise<Db> {
   const client = await getClient();
   return client.db();
 }
-

@@ -9,8 +9,8 @@ Built with Next.js App Router, React, TypeScript and the MongoDB Node.js driver.
 Make sure you have Git and Node.js 24 or later installed. Use a [supported LTS release](https://nodejs.org/en/about/previous-releases) with its latest patches. If you use nvm, `nvm install` and `nvm use` select the current LTS release from `.nvmrc`.
 
 ```bash
-git clone https://github.com/Eronmmer/mongodb-bookmarks-tutorial.git
-cd mongodb-bookmarks-tutorial
+git clone https://github.com/mongodb-developer/bookmarks-app-nextjs-mongodb
+cd bookmarks-app-nextjs-mongodb
 npm ci
 cp .env.example .env
 ```
@@ -56,18 +56,18 @@ The runner supports macOS and Linux. Native Windows is not supported, and WSL ha
 
 ## Project structure
 
-| Path | Purpose |
-| --- | --- |
-| `app/page.tsx` | Bookmark list, pagination and loading errors |
-| `app/actions.ts` | Server Actions for creating, updating and deleting bookmarks |
-| `components/bookmark-form.tsx` | New-bookmark form |
-| `components/bookmark-item.tsx` | Bookmark card with edit and delete controls |
-| `db/bookmarks.ts` | MongoDB queries and writes |
-| `lib/mongodb.ts` | Shared database connection |
-| `lib/bookmark-validation.ts` | Input validation |
-| `scripts/setup-db.mjs` | Pagination index setup |
-| `scripts/verify.mjs` | Isolated test runner |
-| `tests/` | Browser and unit tests |
+| Path                           | Purpose                                                      |
+| ------------------------------ | ------------------------------------------------------------ |
+| `app/page.tsx`                 | Bookmark list, pagination and loading errors                 |
+| `app/actions.ts`               | Server Actions for creating, updating and deleting bookmarks |
+| `components/bookmark-form.tsx` | New-bookmark form                                            |
+| `components/bookmark-item.tsx` | Bookmark card with edit and delete controls                  |
+| `db/bookmarks.ts`              | MongoDB queries and writes                                   |
+| `lib/mongodb.ts`               | Shared database connection                                   |
+| `lib/bookmark-validation.ts`   | Input validation                                             |
+| `scripts/setup-db.mjs`         | Pagination index setup                                       |
+| `scripts/verify.mjs`           | Isolated test runner                                         |
+| `tests/`                       | Browser and unit tests                                       |
 
 Each document stores a title, URL, optional note and creation/update timestamps. The server validates input and generates timestamps. The list shows 100 bookmarks per page, ordered by creation time and `_id`. Editing a bookmark preserves its original position.
 
