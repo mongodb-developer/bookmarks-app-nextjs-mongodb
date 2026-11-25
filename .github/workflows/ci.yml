@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "bookmarks"]
   pull_request:
   workflow_dispatch:
 
@@ -44,4 +44,3 @@ jobs:
           path: playwright-report/
           retention-days: 7
           if-no-files-found: ignore
-
